@@ -17,8 +17,6 @@ const routes = [
     {path: '/faq', name: 'FAQ', component: FAQ},
     {path: '/instagram', name: 'Instagram', component: Instagram},
     {path: '/policy', name: 'Policy', component: Policy},
-    
-
 ]
 
 
