@@ -19,8 +19,8 @@
 
 <style>
 .footer {
-  position: absolute;
-  left: 0;
+  position: relative;
+  margin-top: 10rem;
   bottom: 0;
   width: 100%;
   height: 5%;

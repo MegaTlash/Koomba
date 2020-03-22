@@ -9,21 +9,35 @@
         <div class = "HomeImages">
             
             <!--These sets are the rainy pictures-->
-            <div class = "FirstRowRainyImages">
-                <div class = "rainyRow">
+            <div class = "columns ">
+                <div class = "picRow column">
                     <img src="../assets/Models/Jordan/JordanOutsidePicRain.jpg">
                 </div>
-                <div class = "rainyRow">
+                <div class = "picRow column">
                     <img src="../assets/Models/Harrith/HarrithCarPicOutsideRain.jpg">
                 </div>
                 
-                <div class = "rainyRow">
+                <div class = "picRow column">
+                    <img src="../assets/Models/Tam/TamCarPicOutside.jpg">
+                </div>
+            </div>
+
+            <!--Different sets of pictures-->
+            <div class = "columns ">
+                <div class = "picRow column">
+                    <img src="../assets/Models/Ghafoor/GhafoorPicsTunnel.jpg">
+                </div>
+                <div class = "picRow column">
+                    <img src="../assets/Models/Harrith/harrithBeanie.jpg">
+                </div>
+                
+                <div class = "picRow column">
                     <img src="../assets/Models/Tam/TamCarPicOutside.jpg">
                 </div>
             </div>
 
             <!--Row-->
-
+            <p>_</p>
         </div>
     </div>
 </template>
@@ -50,40 +64,28 @@ export default {
 .HomeImages{
     margin-top: 3rem;
 }
-.rainyRow {
-  float: left;
-  width: 33.33%;
-  padding: 1px;
-  white-space: nowrap;
-}
+
 
 .Welcome{
     padding-top: 1.5rem;
     font-size: 2rem;
 }
 
-/* Clearfix (clear floats) 
-.FirstRowRainyImages::after {
-  content: "";
-  clear: both;
-  display: table;
-}
-*/
 
 
-.rainyRow{
+
+.picRow{
     padding-top: 2rem;
     padding-bottom: 2rem;
-    background: #292929;
 }
 
-.FirstRowRainyImages .rainyRow img{
+.columns .picRow img{
     transition: 0.2s;
-    width: 70%;
+    width: 75%;
     height: auto;
 }
 
-.FirstRowRainyImages .rainyRow img:hover{
+.columns .picRow img:hover{
     transform: scale(1.1);
     
 }
