@@ -11,3 +11,10 @@ export default {
     name: 'Policy',
 };
 </script>
+
+<style scoped>
+h1 {
+    font-size:3rem;
+    font-weight: bold;
+}
+</style>

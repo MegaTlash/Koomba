@@ -5,6 +5,15 @@
             <div>Instagram: <a href="https://www.instagram.com/_koomba_/">@koomba</a></div>
             <div>Email: <a>koomba@gmail.com</a></div>
         </div>
+        <div id="subscribe">
+            <h2>Subscribe to our weekly newsletter!</h2>
+            <form>
+                <label for="email">Your email:</label>
+                <input type="text" id="email" name="email">
+                <input type="submit" value="Submit">
+            </form>
+        </div>
+        
     </div>
 </template>
 
@@ -24,5 +33,15 @@ h1 {
 
 #contact div{
     padding: 0.5rem;
+}
+
+#subscribe {
+    padding-top: 3rem;
+}
+
+#subscribe h2 {
+    font-weight: bold;
+    font-size: 1.5rem;
+    padding-bottom: 1rem;
 }
 </style>
