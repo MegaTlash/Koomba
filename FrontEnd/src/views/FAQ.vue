@@ -1,6 +1,6 @@
 <template>
     <div class = "FAQ">
-        <p1>HELLO FAQ</p1>
+        <h1>FAQ</h1>
     </div>
 </template>
 
@@ -11,3 +11,10 @@ export default {
     name: 'FAQ',
 };
 </script>
+
+<style scoped>
+h1 {
+    font-size:3rem;
+    font-weight: bold;
+}
+</style>
