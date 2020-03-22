@@ -2,8 +2,8 @@
   <div id="app">
     <Header title = "Koomba" />
     <Nav />
-    <Footer />
     <router-view/>
+    <Footer />
   </div>
 </template>
 
@@ -16,7 +16,7 @@ import Header from "@/components/Header.vue";
 export default {
   name: 'App',
   components: {
-    Nav, Header//, Footer
+    Nav, Header, //Footer
   }
 }
 </script>

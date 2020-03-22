@@ -15,6 +15,7 @@ export default {
 .header {
   text-align: center;
 }
+
 .logo {
     position: relative;
     top: -2rem;
