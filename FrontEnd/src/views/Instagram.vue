@@ -57,6 +57,7 @@ export default {
     width: 30%;
     padding: 2rem;
     margin: auto;
+    margin-left: 5rem;
 }
 
 .secondPhoto {
@@ -78,6 +79,7 @@ export default {
     width: 30%;
     padding: 2rem;
     margin: auto;
+    margin-left: 5rem;
 }
 
 .fifthPhoto {
