@@ -7,7 +7,7 @@
                 <a class = "navbar-item"><router-link to = "/faq">FAQ</router-link></a>
                 <a class = "navbar-item"><router-link to = "/contact">Contact</router-link></a>
                 <a class = "navbar-item"><router-link to = "/policy">Policy</router-link></a>
-                <a class = "navbar-item"><router-link to = "/aboutme" active-class = "active">About Me</router-link></a>
+                <a class = "navbar-item"><router-link to = "/aboutme" active-class = "active">About Us</router-link></a>
             </div>
         </div> 
     </nav>

@@ -3,7 +3,7 @@
         <div class = "KoombaImgAbout"> 
             <img src="../assets/Models/Harrith/harrithAboutMeProfilePic.jpg" class="harrithIMG">
             <div class = "KoombaMessage">
-                <h1>About Me</h1>
+                <h1>About Us</h1>
                 <p>Welcome to the KOOMBA Gang. KOOMBA brand is the combination of streetwear and the actual streets. We come from a graffiti background, where reputation and Name is everything. We embrace the culture of graffiti, inspired by its unique hand styles. Our goal is to bring acknowledgement to the culture, bringing new eyes into our lifestyle. This is KOOMBA Gang.
                 </p>
             </div>

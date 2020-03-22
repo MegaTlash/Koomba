@@ -81,13 +81,13 @@ export default {
 
 .columns .picRow img{
     transition: 0.2s;
+    border-radius: 3%;
     width: 75%;
     height: auto;
 }
 
 .columns .picRow img:hover{
     transform: scale(1.1);
-    
 }
 
 </style>
