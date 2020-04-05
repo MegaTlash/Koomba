@@ -49,12 +49,12 @@ export default {
 
 //This removes the blue lines but if you hover over the work it changes to another color FIX PLZ!
 a {
-  color: inherit;
+  color: #2A543C;
 }
 
-router-link-exact-active a {
-    color: #2A543C;
-} 
+a:hover {
+    color: rgb(141, 197, 150);
+}
 
 
 

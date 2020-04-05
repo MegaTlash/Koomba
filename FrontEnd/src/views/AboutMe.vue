@@ -1,10 +1,16 @@
 <template>
-    <div class = "AboutMe">
-        <div class = "KoombaImgAbout"> 
-            <img src="../assets/Models/Harrith/harrithAboutMeProfilePic.jpg" class="harrithIMG">
-            <div class = "KoombaMessage">
-                <h1>About Us</h1>
-                <p>Welcome to the KOOMBA Gang. KOOMBA brand is the combination of streetwear and the actual streets. We come from a graffiti background, where reputation and Name is everything. We embrace the culture of graffiti, inspired by its unique hand styles. Our goal is to bring acknowledgement to the culture, bringing new eyes into our lifestyle. This is KOOMBA Gang.
+    <div class="AboutMe">
+        <div class="KoombaImgAbout columns"> 
+            <div class="column is-half">
+                <img src="../assets/Models/Harrith/harrithAboutMeProfilePic.jpg" class="harrithIMG">
+            </div>
+            <div class="KoombaMessage column is-one-third">
+                <h1>ABOUT US</h1>
+                <p>
+                    Welcome to the KOOMBA Gang. KOOMBA brand is the combination of streetwear and the actual streets. 
+                    We come from a graffiti background, where reputation and name is everything. We embrace the culture
+                    of graffiti, inspired by its unique hand styles. Our goal is to bring acknowledgement to the culture, 
+                    bringing new eyes into our lifestyle. This is KOOMBA Gang.
                 </p>
             </div>
         </div>
@@ -23,34 +29,26 @@ export default {
 
 
 <style scoped>
-.harrithIMG{
-    position: relative;
-    float: left;
-    margin-left: 18rem;
-    height: 300px;
-    width: auto;
+.harrithIMG {
+    max-width: 20rem;
     border-radius: 50%;
-    
+    float: right;
+    margin-right: 5rem;
 }
 /*Change this if you find a better way TODO TODO TODO*/
-.KoombaMessage h1{
-  position: relative;
-  float: left;
-  margin-left: 5.25rem;
-  display: block;
-  font-size: 2em;
-  
-  font-weight: bold;
-  color: #2A543C;
-}
-
-.KoombaMessage p{
-    width: 60rem;
-    padding-top: 3.5rem;
-    padding-left: 22rem;
-    margin-left: 20rem;
+h1 {
+    font-size:3rem;
+    font-weight: bold;
+    font-style: italic;
+    color: rgb(141, 197, 150);
     text-align: left;
 }
 
+p {
+    width: 60rem;
+    padding-top: 2rem;
+    text-align: left;
+    padding-right: 30rem;
+}
 
 </style>

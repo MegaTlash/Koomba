@@ -1,7 +1,7 @@
 <template>
     <div class="Contact">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        <h1>Contact</h1>
+        <h1>CONTACT</h1>
         <div class="columns">
             <div class="column is-one-quarter"></div>
             <div class="column is-narrow">
@@ -40,7 +40,9 @@ export default {
 h1 {
     font-size:3rem;
     font-weight: bold;
+    font-style: italic;
     margin-bottom: 2rem;
+    color: rgb(141, 197, 150);
 }
 
 .columns {
@@ -54,7 +56,7 @@ h1 {
 }
 
 .fa-instagram {
-  background: #285a46;
+  background: #2A543C;
   color: rgb(141, 197, 150);
   padding: 1.5rem;
   font-size: 2.5rem;
@@ -69,12 +71,13 @@ i {
 }
 
 a {
-    color: #285a46;
+    color: #2A543C;
 }
 
 a:hover {
     color: white;
 }
+
 
 #subscribe {
     margin-top: 5rem;
