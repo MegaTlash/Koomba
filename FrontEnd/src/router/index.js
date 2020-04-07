@@ -30,4 +30,6 @@ const router = new VueRouter({
     linkExactActiveClass: "exact-active",
 })
 
-export default router
+router.replace("Home");
+
+export default router;
