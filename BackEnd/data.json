@@ -1,0 +1,32 @@
+[{
+    "_id": "001",
+    "itemType": "T-Shirt",
+    "itemPrice": "25",
+    "itemColour": "Blue",
+    "detailsURL": "/tbd?id=001",
+    "imageURL": "tbd"
+ },
+ {
+    "_id": "002",
+    "itemType": "Sweater",
+    "itemPrice": "60",
+    "itemColour": "Black",
+    "detailsURL": "/tbd?id=001",
+    "imageURL": "tbd"
+ },
+ {
+    "_id": "003",
+    "itemType": "Beanie",
+    "itemPrice": "15",
+    "itemColour": "Green",
+    "detailsURL": "/tbd?id=001",
+    "imageURL": "tbd"
+ },
+ {
+    "_id": "004",
+    "itemType": "Windbreaker",
+    "itemPrice": "60",
+    "itemColour": "Black",
+    "detailsURL": "/tbd?id=001",
+    "imageURL": "tbd"
+ }]
