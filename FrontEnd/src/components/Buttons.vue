@@ -1,7 +1,7 @@
 <template>
     <div class="buttons">
-        <button @click="redirectUser" class="button is-success">Sign-Up</button>
-        <button class="button is-light">Login</button>
+        <button @click="redirectSignIn" class="button is-success">Sign-Up</button>
+        <button @click="redirectLogin" class="button is-light">Login</button>
     </div>
 </template>
 
@@ -11,14 +11,21 @@
     export default {
         name: 'Buttons',
         methods: {
-            redirectUser() { // this method is called on button click
+            redirectSignIn() { // this method is called on button click
                 this.$router.push({name: `SignUp`}).catch(e => {
                     if (e.name != "NavigationDuplicated") {
                         //console.log('no duplicates')
                         throw e;
                     }
                 }) 
-               
+            },
+            redirectLogin() { // this method is called on button click
+                this.$router.push({name: `Login`}).catch(e => {
+                    if (e.name != "NavigationDuplicated") {
+                        //console.log('no duplicates')
+                        throw e;
+                    }
+                }) 
             }
         }
     }
