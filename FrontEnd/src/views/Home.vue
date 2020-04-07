@@ -48,6 +48,7 @@
 export default {
     name: 'Home',
 };
+
 </script>
 
 
@@ -60,16 +61,16 @@ export default {
     background: #292929;
 }
 
-/*For the pictures*/
-.HomeImages{
-    margin-top: 3rem;
-}
-
-
 .Welcome{
     padding-top: 1.5rem;
     font-size: 2rem;
 }
+/*For the pictures*/
+.HomeImages{
+    margin-top: 3rem;
+   
+}
+
 
 
 
@@ -84,10 +85,21 @@ export default {
     border-radius: 3%;
     width: 75%;
     height: auto;
+    opacity: 0;
+    animation-name: HomeImages;
+    animation-duration: 3s;
+    animation-delay: 3s;
+    animation-fill-mode: forwards;
 }
 
 .columns .picRow img:hover{
     transform: scale(1.1);
+}
+
+/* Transitions */
+@keyframes HomeImages{
+    0% {opacity: 0}
+    100%{opacity: 1};
 }
 
 </style>

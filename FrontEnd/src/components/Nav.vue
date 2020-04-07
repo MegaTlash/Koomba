@@ -3,8 +3,8 @@
         <div id = "navbarContents" class = "navbar-menu">
             <div class="navbar-start">
                 <a class = "navbar-item"><router-link to = "/home">Home</router-link></a>
+                <a class = "navbar-item"><router-link to = "/store">Store</router-link></a>
                 <a class = "navbar-item"><router-link to = "/instagram">Instagram</router-link></a>
-                <a class = "navbar-item"><router-link to = "/faq">FAQ</router-link></a>
                 <a class = "navbar-item"><router-link to = "/contact">Contact</router-link></a>
                 <a class = "navbar-item"><router-link to = "/policy">Policy</router-link></a>
                 <a class = "navbar-item"><router-link to = "/aboutme" active-class = "active">About Us</router-link></a>
