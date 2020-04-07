@@ -6,6 +6,7 @@ import Contact from '../views/Contact.vue'
 import Store from '../views/Store.vue'
 import Instagram from '../views/Instagram.vue'
 import Policy from '../views/Policy.vue'
+import SignUp from '../views/SignUp.vue'
 
 
 Vue.use(VueRouter)
@@ -17,6 +18,7 @@ const routes = [
     {path: '/store', name: 'Store', component: Store},
     {path: '/instagram', name: 'Instagram', component: Instagram},
     {path: '/policy', name: 'Policy', component: Policy},
+    {path: '/signup', name: 'SignUp', component: SignUp},
 ]
 
 

@@ -1,6 +1,7 @@
 <template>
   <div id="app">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
+    <Buttons />
     <Header title = "Koomba" />
     <Nav />
     <router-view/>
@@ -13,11 +14,12 @@
 import Nav from "@/components/Nav.vue";
 import Header from "@/components/Header.vue";
 import Footer from "@/components/Footer.vue";
+import Buttons from "@/components/Buttons.vue";
 
 export default {
   name: 'App',
   components: {
-    Nav, Header, Footer
+    Nav, Header, Footer, Buttons
   }
 }
 </script>

@@ -10,7 +10,6 @@
 
       <img src="https://lh3.googleusercontent.com/proxy/SF0Tr9rcM11D-b4T3_lOV2iU8EDGbaK6ixwzhusJHKBQBOtGZPJIAjrfwCpxu_3VY1YvhZ4ixap7RKlx1z7y2bvPhFfqDuuoCMDxcJVZ8RSn0zaAxl8" 
           alt="Twitter" width=50 height=50>-->
-      <a href= "https://instagram.com/_koomba_/" ><i class = "fab fa-instagram"></i></a>
     </div>
   </footer>
   
