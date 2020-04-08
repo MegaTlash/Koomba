@@ -8,7 +8,7 @@
          <div class="form">
             <div class="field">
                 <p class="control has-icons-left has-icons-right">
-                    <input class="input" type="text" placeholder="First Name">
+                    <input class="input" type="text" v-model="firstName" placeholder="First Name">
                     <span class="icon is-small is-left">
                         <i class="fas fa-user"></i>
                     </span>
@@ -16,7 +16,7 @@
             </div>
             <div class="field">
                 <p class="control has-icons-left has-icons-right">
-                    <input class="input" type="text" placeholder="Last Name">
+                    <input class="input" type="text" v-model="lastName" placeholder="Last Name">
                     <span class="icon is-small is-left">
                         <i class="fas fa-id-card"></i>
                     </span>
@@ -24,7 +24,7 @@
             </div>
             <div class="field">
                 <p class="control has-icons-left has-icons-right">
-                    <input class="input" type="email" placeholder="Email">
+                    <input class="input" type="email" v-model="email" placeholder="Email">
                     <span class="icon is-small is-left">
                         <i class="fas fa-envelope"></i>
                     </span>
@@ -32,22 +32,41 @@
             </div>
             <div class="field">
             <p class="control has-icons-left">
-                <input class="input" type="password" placeholder="Password">
+                <input class="input" type="password" v-model="password" placeholder="Password">
                 <span class="icon is-small is-left">
                     <i class="fas fa-lock"></i>
                 </span>
             </p>
             </div>
         </div>
-        <button class="button is-success">Submit</button>
+        <button @click="register" class="button is-success">Register</button>
     </div>
 </template>
 
-
-
 <script>
+import axios from 'axios';
 export default {
     name: 'SignUp',
+    data(){
+        return{
+            firstName: '',
+            lastName: '',
+            email: '',
+            password: ''
+        }
+    },
+    methods: {
+       register(){
+           let newUser = {
+               firstName: this.firstName,
+               lastName: this.lastName,
+               email: this.email,
+               password: this.password
+           }
+            //console.log(newUser);
+            axios.post('http://localhost:3000/signup', newUser);
+        }
+    }
 };
 </script>
 

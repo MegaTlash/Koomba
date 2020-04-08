@@ -1,8 +1,7 @@
 <template>
     <div class = "Home">
         <div class = "VideoHomeLanding">
-            <video width = "720" height = "480" src = "../assets/koombaVideo.mp4" autoplay>
-            </video>
+            <video ref = "videoRef" width = "720" height = "480" src = "../assets/koombaVideo.mp4" autoplay loop> </video>
         </div>
         <p class = "Welcome">Welcome</p>
         <!--These are the images for showing-->
@@ -62,7 +61,10 @@ export default {
 
 .Welcome{
     padding-top: 1.5rem;
-    font-size: 2rem;
+    font-size:3rem;
+    font-weight: bold;
+    font-style: italic;
+    text-align: center;
 }
 /*For the pictures*/
 .HomeImages{
