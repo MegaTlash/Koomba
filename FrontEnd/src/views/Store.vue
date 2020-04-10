@@ -1,6 +1,8 @@
 <template>
     <div class = "Store">
-        <h1>Store</h1>
+        <table id="items">
+            <img src=../assets/Models/Jordan/JordanOutsidePicRain.jpg width=200>
+        </table>
     </div>
 </template>
 
@@ -9,7 +11,17 @@
 <script>
 export default {
     name: 'Store',
+    mounted : function() {
+        var items = document.getElementById("items");
+        items.innerHTML = '<img src="../assets/Models/Jordan/JordanOutsidePicRain.jpg" width=200>';
+        console.log(items.innerHTML);
+    }
+    
+
 };
+
+
+
 </script>
 
 <style scoped>
