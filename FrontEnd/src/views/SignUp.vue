@@ -49,7 +49,7 @@
                 <p :class="pClass3">{{errMsg3}}</p>
             </div>
 
-            <!-- Email Input -->
+            <!-- Password Input -->
             <div class="field">
                 <p class="control has-icons-left has-icons-right">
                     <input :class="inputType4" type="password" v-model="password" placeholder="Password">
@@ -108,25 +108,24 @@ export default {
                email: this.email,
                password: this.password
            }
-            //console.log(newUser);
+
             axios.post('http://localhost:3000/signup', newUser)
                 .then(res => {
-                    //console.log(res.data);
 
-                    if (res.data.title == 'errors' || res.data.title == 'emailExists'){
+                    if (res.data.title == 'errors'){
                         
                         //First name input is empty
                         if(res.data.isErrFN){
                             this.inputType1 = 'input is-danger'
                             this.pClass1 = 'help is-danger';
                             this.errMsg1 = res.data.errorFN;
-                            this.icon1 = 'fas fa-exclamation-triangle'
+                            this.icon1 = 'fas fa-exclamation-triangle';
                         }
                         else{
                             this.inputType1 = 'input is-success'
                             this.pClass1 = '';
                             this.errMsg1 = '';
-                            this.icon1 = 'fas fa-check'
+                            this.icon1 = 'fas fa-check';
                         }
 
                         //Last name input is empty
@@ -134,27 +133,27 @@ export default {
                             this.inputType2 = 'input is-danger'
                             this.pClass2 = 'help is-danger';
                             this.errMsg2 = res.data.errorLN;
-                            this.icon2 = 'fas fa-exclamation-triangle'
+                            this.icon2 = 'fas fa-exclamation-triangle';
                         }
                         else{
                             this.inputType2 = 'input is-success'
                             this.pClass2 = '';
                             this.errMsg2 = '';
-                            this.icon2 = 'fas fa-check'
+                            this.icon2 = 'fas fa-check';
                         }
 
                         //Email input is empty or already in use
-                        if(res.data.isErrEmail || res.data.title == 'emailExists'){
+                        if(res.data.isErrEmail){
                             this.inputType3 = 'input is-danger'
                             this.pClass3 = 'help is-danger';
                             this.errMsg3 = res.data.errorEmail;
-                            this.icon3 = 'fas fa-exclamation-triangle'
+                            this.icon3 = 'fas fa-exclamation-triangle';
                         }
                         else{
-                            this.inputType3 = 'input is-success'
+                            this.inputType3 = 'input is-success';
                             this.pClass3 = '';
                             this.errMsg3 = '';
-                            this.icon3 = 'fas fa-check'
+                            this.icon3 = 'fas fa-check';
                         }
 
                         //Password input is empty or input is less than 6 characters
@@ -162,22 +161,24 @@ export default {
                             this.inputType4 = 'input is-danger'
                             this.pClass4 = 'help is-danger';
                             this.errMsg4 = res.data.errorPass;
-                            this.icon4 = 'fas fa-exclamation-triangle'
+                            this.icon4 = 'fas fa-exclamation-triangle';
                         }
                         else{
                             this.inputType4 = 'input is-success'
                             this.pClass4 = '';
                             this.errMsg4 = '';
-                            this.icon4 = 'fas fa-check'
+                            this.icon4 = 'fas fa-check';
                         }
                     }
-                    else{
-                        console.log('success')
-                    }
 
-                    
-                    //E-mail already in use
-                    
+                    //Succesful Registration
+                    else{
+                        this.$router.push({name: `Home`}).catch(e => {
+                            if (e.name != "NavigationDuplicated") {
+                                throw e;
+                            }
+                        }) 
+                    }    
                 })
         }
     }
