@@ -3,7 +3,7 @@ const mongodb = require('mongodb');
 
 const router = express.Router();
 
-/*
+
 
 //Get Posts
 router.get('/', async (req, res) => {
@@ -15,11 +15,13 @@ router.get('/', async (req, res) => {
 
 //loadPostsCollection
 async function loadPostCollection(){
-        useNewUrlParser: true
-    })
-    return client.db('vue_express').collection('posts');
+
+    const client = await mongodb.MongoClient.connect('mongodb+srv://Admin:MW9scrg59teSRm9M@koombacluster-rglom.mongodb.net/test?retryWrites=true&w=majority', {
+       useNewUrlParser: true 
+    });
+
+    return client.db('KoombaDataBase').collection('ShopItems');
 }
 
-*/
 
 module.exports = router;
