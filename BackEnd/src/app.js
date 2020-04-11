@@ -36,6 +36,11 @@ app.post('/signup', (req, res, next) =>{
         errorEmail = 'E-mail cannot be empty';
         isErrEmail = true;
     }
+    else if(validateEmail(email) == false){
+        console.log('email is not valid')
+        errorEmail = 'E-mail is not in the correct format - example@123.com';
+        isErrEmail = true;
+    }
 
     //Password input field is left empty
     if (password == ''){
@@ -52,7 +57,7 @@ app.post('/signup', (req, res, next) =>{
     hashedPassword = bcrypt.hashSync(password, 10);
     
     //Catching errors
-    if((isErrFN || isErrLN || isErrPass) && isErrEmail){
+    if(isErrFN || isErrLN || isErrPass || isErrEmail){
         
         return res.json({
             title: 'errors',
@@ -107,6 +112,14 @@ app.post('/signup', (req, res, next) =>{
     })
     
 });
+
+//Function to check if email is valid
+//Must be in the format example@123.com
+function validateEmail(email) 
+    {
+        var re = /\S+@\S+\.\S+/;
+        return re.test(email);
+    }
 
 //Process for logging in
 app.post('/login', (req, res, next) => {
