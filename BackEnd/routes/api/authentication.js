@@ -1,15 +1,17 @@
 const express = require('express');
-const bodyParser = require('body-parser');
-const cors = require('cors');
-const User = require('../models/User');
+//const bodyParser = require('body-parser');
+//const cors = require('cors');
+const User = require('../../models/User');
 const bcrypt = require('bcrypt');
 
-const app = express();
-app.use(bodyParser.json());
-app.use(cors());
+//const app = express();
+router = express.Router()
+
+//app.use(bodyParser.json());
+//app.use(cors());
 
 //Process for registering a new user
-app.post('/signup', (req, res, next) =>{
+router.post('/signup', (req, res, next) =>{
 
     firstName = req.body.firstName;
     lastName = req.body.lastName;
@@ -122,7 +124,7 @@ function validateEmail(email)
     }
 
 //Process for logging in
-app.post('/login', (req, res, next) => {
+router.post('/login', (req, res, next) => {
 
     email = req.body.email;
     password = req.body.password;
@@ -193,9 +195,4 @@ app.post('/login', (req, res, next) => {
     }
 });
 
-
-//Web listener
-app.set('port', process.env.PORT || 3000);
-app.listen(app.get('port'), function() {
-   console.log('Server listening on port ' + app.get('port'));
-});
+module.exports = router;

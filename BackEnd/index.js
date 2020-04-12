@@ -20,9 +20,10 @@ app.use(function(request, respone, next){
 
 
 const clothes = require('./routes/api/clothes.js')
+const authentication = require('./routes/api/authentication.js')
 
 app.use('/api/clothes', clothes);
-
+app.use('/', authentication);
 
 
 
