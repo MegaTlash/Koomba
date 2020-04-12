@@ -72,12 +72,13 @@ export default {
 
 
 <script>
-//import ClothesService from '../ClothesServices';
+import ClothesService from '../ClothesServices';
 export default {
     name: 'Store',
     data(){
         return {
-            items: [{
+            items: [
+              /*{
             _id: "001",
             itemType: "T-Shirt",
             itemPrice: "25",
@@ -129,8 +130,7 @@ export default {
             itemColour: "Black",
             detailsURL: "/tbd?id=002",
             imageURL: require('../assets/Models/Jordan/JordanOutsidePicRain.jpg')
-          }
-
+          }*/
 
           ],
             error: '',
@@ -141,15 +141,15 @@ export default {
       getImg(imgName) {
         return require(imgName)
       }
-    }
-    /*async created(){
+    },
+    async created(){
         try{
-            this.clothes = ClothesService.getClothes();
-            console.log(this.clothes);
+            this.items = ClothesService.getClothes();
+            console.log(this.items);
         }catch(err){
             this.error = err.message;
         }
-    }*/
+    }
 };
 
 

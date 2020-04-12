@@ -8,19 +8,18 @@ class ClothesService{
     //Get Posts
     static getClothes(){
         return new Promise((resolve, reject) => {
-            try{
-                const res =  axios.get(url);
+            axios.get(url).then((res) =>{
                 const data = res.data;
                 resolve(
-                    data.map(post => ({
-                        ...post,                 
+                    data.map(clothes=> ({
+                        ...clothes,
                     }))
                 );
-            }
-            catch(err){
+            })
+            .catch ((err) => {
                 reject(err);
-            }
-        })
+            })
+        });
     }
 }
 
