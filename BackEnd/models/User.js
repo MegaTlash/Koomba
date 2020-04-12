@@ -3,7 +3,7 @@ const Schema = mongoose.Schema;
 
 // database config
 mongoose.Promise = global.Promise
-mongoose.connect('mongodb://localhost:27017/userdata', {
+mongoose.connect('mongodb+srv://Admin:MW9scrg59teSRm9M@koombacluster-rglom.mongodb.net/KoombaDataBase?retryWrites=true&w=majority', {
       useNewUrlParser: true
    },
    function(error) {
@@ -23,7 +23,7 @@ const userSchema = new Schema({
     },
     hashedPassword: String,
 }, {
-    collection: 'users'
+    collection: 'Users'
 });
 
 let User = mongoose.model('User', userSchema);

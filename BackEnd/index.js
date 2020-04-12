@@ -26,8 +26,12 @@ io.on('connection', function(socket) {
 });
 
 const clothes = require('./routes/api/clothes.js')
+const authentication = require('./routes/api/authentication.js')
 
 app.use('/api/clothes', clothes);
+app.use('/', authentication);
+
+
 
 //Going to port 3000
 app.set('port', 3000);

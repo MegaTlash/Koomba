@@ -71,7 +71,7 @@ export default {
         
         axios.post('http://localhost:3000/login', user)
                 .then(res => {
-
+                    console.log(res)
                     if (res.data.title == 'errors'){
                         
                         //Email error check
