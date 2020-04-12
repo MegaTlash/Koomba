@@ -35,7 +35,7 @@ export default {
     float: right;
     margin-right: 5rem;
 }
-/*Change this if you find a better way TODO TODO TODO*/
+
 h1 {
     font-size:3rem;
     font-weight: bold;

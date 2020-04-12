@@ -1,5 +1,6 @@
 <template>
     <div class="buttons">
+        <i @click="redirectShoppingCart" class="fa fa-shopping-cart fa-2x"></i>
         <button @click="redirectSignIn" class="button is-success">Sign-Up</button>
         <button @click="redirectLogin" class="button is-light">Login</button>
     </div>
@@ -26,16 +27,28 @@
                         throw e;
                     }
                 }) 
+            },
+            redirectShoppingCart() {
+                this.$router.push({name: `ShoppingCart`}).catch(e => {
+                    if (e.name != "NavigationDuplicated") {
+                        //console.log('no duplicates')
+                        throw e;
+                    }
+                }) 
             }
         }
     }
 </script>
 
 <style scoped>
+.fa-shopping-cart {
+    padding-right: 2rem;
+    cursor: pointer;
+}
 
 .buttons {
   position: absolute;
   right: 0;
-  margin-right: 1rem;
+  margin-right: 2rem;
 }
 </style>

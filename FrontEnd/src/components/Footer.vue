@@ -2,15 +2,6 @@
   
   <footer class="footer">
     <div class="content has-text-centered">
-      
-      <!--<p>
-        <strong>Bulma</strong> by <a href="https://jgthms.com">Jeremy Thomas</a>. The source code is licensed
-        <a href="http://opensource.org/licenses/mit-license.php">MIT</a>. The website content
-        is licensed <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY NC SA 4.0</a>.
-      </p>
-
-      <img src="https://lh3.googleusercontent.com/proxy/SF0Tr9rcM11D-b4T3_lOV2iU8EDGbaK6ixwzhusJHKBQBOtGZPJIAjrfwCpxu_3VY1YvhZ4ixap7RKlx1z7y2bvPhFfqDuuoCMDxcJVZ8RSn0zaAxl8" 
-          alt="Twitter" width=50 height=50>-->
       <div id="chat">
         <i class="fa fa-angle-double-up fa-2x" @click="popup"></i>Chat
         <div id="messages">
@@ -29,14 +20,15 @@ export default {
   name: 'Footer',
   methods: {
     popup() {
+      // Close chat if its open
       if (document.getElementById("chat").style.height == "20rem"){
         document.getElementById("chat").style.height = "3rem";
       }
-      else {
+      else { // Open chat if its closed
         document.getElementById("chat").style.height = "20rem";
       }
     },
-    addMessage() {
+    addMessage() { // Some of the chat code was taken from my Lab 3 (Shawn)
       let messageField = document.getElementById("messageField");
 
       // Create text message with the value entered
