@@ -56,9 +56,9 @@ export default {
         <!--<Items v-bind:items="items"/>-->
         <li v-for="(item, idx) in items" :key="idx">
           
-          <img :src="item.imageURL"/>
-          <a1>{{item.itemType}}</a1>
-          <a2>{{item.itemPrice}}</a2>
+          <img :src="require(`@/assets/Models/Jordan/${item.imageURL}`)"/>
+          <p>{{item.itemType}}</p>
+          <p>${{item.itemPrice}}</p>
           
         </li>
         </ul>
@@ -72,7 +72,7 @@ export default {
 
 
 <script>
-import ClothesService from '../ClothesServices';
+import ClothesService from '../ClothesServices.js';
 export default {
     name: 'Store',
     data(){
@@ -173,6 +173,10 @@ ul li {
     list-style: none;
     flex-basis: 33.333333%;
     padding: 3rem;
+}
+
+ul li p{
+  font-family: Helvetica;
 }
 
 </style>
