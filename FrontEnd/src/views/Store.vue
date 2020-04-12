@@ -144,7 +144,7 @@ export default {
     },
     async created(){
         try{
-            this.items = ClothesService.getClothes();
+            this.items = await ClothesService.getClothes();
             console.log(this.items);
         }catch(err){
             this.error = err.message;
