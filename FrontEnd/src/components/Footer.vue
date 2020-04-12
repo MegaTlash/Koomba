@@ -86,7 +86,7 @@ export default {
 
 div #messages {
   text-align: left;
-  padding-top: 2rem;
+  padding-top: 0.5rem;
 	padding-left: 1rem;
   width: 250px;
   height: 200px;
