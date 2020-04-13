@@ -1,14 +1,14 @@
 <template>
     <div class="buttons">
+        <div id="username">Guest</div>
         <i @click="redirectShoppingCart" class="fa fa-shopping-cart fa-2x"></i>
         <button @click="redirectSignIn" class="button is-success">Sign-Up</button>
-        <button @click="redirectLogin" class="button is-light">Login</button>
+        <button @click="redirectLogin" class="button is-light" id="login">Login</button>
+        <button @click="logout" class="button is-light" id="logout">Logout</button>
     </div>
 </template>
 
 <script>
-    //import router from '../router/index.js'  // Just added this line and code works !!
-
     export default {
         name: 'Buttons',
         methods: {
@@ -35,8 +35,14 @@
                         throw e;
                     }
                 }) 
+            },
+            logout() {
+                document.getElementById('logout').style.display = "none";
+                document.getElementById('login').style.display = "block";
+                document.getElementById('username').innerHTML = "Guest";
             }
-        }
+        },
+        
     }
 </script>
 
@@ -46,9 +52,31 @@
     cursor: pointer;
 }
 
+.fa-shopping-cart:hover {
+    color: rgb(141, 197, 150);
+}
+
 .buttons {
   position: absolute;
   right: 0;
   margin-right: 2rem;
+}
+
+#login {
+    display: block;
+}
+
+#logout {
+    display: none;
+}
+
+#username {
+    font-weight: bold;
+    padding-right: 2rem;
+    cursor: pointer;
+}
+
+#username:hover {
+    color: rgb(141, 197, 150);
 }
 </style>

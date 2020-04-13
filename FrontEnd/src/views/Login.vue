@@ -42,6 +42,7 @@
 
 <script>
 import axios from 'axios';
+
 export default {
     name: 'Login',
     data(){
@@ -69,50 +70,55 @@ export default {
                 password: this.password
             }
         
-        axios.post('http://localhost:3000/login', user)
-                .then(res => {
-                    console.log(res)
-                    if (res.data.title == 'errors'){
-                        
-                        //Email error check
-                        if(res.data.emailNotExists || res.data.emailEmpty){
-                            this.inputType1 = 'input is-danger'
-                            this.pClass1 = 'help is-danger';
-                            this.errMsg1 = res.data.errorEmail;
-                            this.icon1 = 'fas fa-exclamation-triangle';
-                        }
-                        else{
-                            this.inputType1 = 'input is-success'
-                            this.pClass1 = '';
-                            this.errMsg1 = '';
-                            this.icon1 = 'fas fa-check';
-                        }
-                        
-                        //Password error check
-                        if(res.data.passNoMatch || res.data.passEmpty){
-                            this.inputType2 = 'input is-danger';
-                            this.pClass2 = 'help is-danger';
-                            this.errMsg2 = res.data.passError;
-                            this.icon2 = 'fas fa-exclamation-triangle';
-                        }
-                        else{
-                            this.inputType2 = 'input is-success'
-                            this.pClass2 = '';
-                            this.errMsg2 = '';
-                            this.icon2 = 'fas fa-check';
-                        }
+            axios.post('http://localhost:3000/login', user).then(res => {
+                console.log(res)
+                if (res.data.title == 'errors'){
+                    
+                    //Email error check
+                    if(res.data.emailNotExists || res.data.emailEmpty){
+                        this.inputType1 = 'input is-danger'
+                        this.pClass1 = 'help is-danger';
+                        this.errMsg1 = res.data.errorEmail;
+                        this.icon1 = 'fas fa-exclamation-triangle';
                     }
-
-                    //Login Successful
                     else{
-                        this.$router.push({name: `Home`}).catch(e => {
-                            if (e.name != "NavigationDuplicated") {
-                                throw e;
-                            }
-                        }) 
-                    }  
-                })
-        }
+                        this.inputType1 = 'input is-success'
+                        this.pClass1 = '';
+                        this.errMsg1 = '';
+                        this.icon1 = 'fas fa-check';
+                    }
+                    
+                    //Password error check
+                    if(res.data.passNoMatch || res.data.passEmpty){
+                        this.inputType2 = 'input is-danger';
+                        this.pClass2 = 'help is-danger';
+                        this.errMsg2 = res.data.passError;
+                        this.icon2 = 'fas fa-exclamation-triangle';
+                    }
+                    else{
+                        this.inputType2 = 'input is-success'
+                        this.pClass2 = '';
+                        this.errMsg2 = '';
+                        this.icon2 = 'fas fa-check';
+                    }
+                }
+
+                //Login Successful
+                else {
+                    // Take away login option and replace it with login
+                    document.getElementById('login').style.display = "none";
+                    document.getElementById('logout').style.display = "block";
+                    document.getElementById('username').innerHTML = this.email;
+                    // Go home
+                    this.$router.push({name: `Home`}).catch(e => {
+                        if (e.name != "NavigationDuplicated") {
+                            throw e;
+                        }
+                    });
+                }  
+            })
+        },
+
     }
 };
 </script>
