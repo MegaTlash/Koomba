@@ -5,11 +5,10 @@ import Home from '../views/Home.vue'
 import Contact from '../views/Contact.vue'
 import Store from '../views/Store.vue'
 import Instagram from '../views/Instagram.vue'
-import Policy from '../views/Policy.vue'
 import SignUp from '../views/SignUp.vue'
 import Login from '../views/Login.vue'
 import ShoppingCart from '../views/ShoppingCart.vue'
-
+import Item from '../views/Item.vue'
 
 Vue.use(VueRouter)
 
@@ -19,10 +18,10 @@ const routes = [
     {path: '/contact', name: 'Contact', component: Contact},
     {path: '/store', name: 'Store', component: Store},
     {path: '/instagram', name: 'Instagram', component: Instagram},
-    {path: '/policy', name: 'Policy', component: Policy},
     {path: '/signup', name: 'SignUp', component: SignUp},
     {path: '/login', name: 'Login', component: Login},
-    {path: '/shoppingcart', name: 'ShoppingCart', component: ShoppingCart}
+    {path: '/shoppingcart', name: 'ShoppingCart', component: ShoppingCart},
+    {path: '/item', name: 'Item', component: Item}
 ]
 
 

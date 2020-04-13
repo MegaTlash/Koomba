@@ -36,7 +36,7 @@
                     }
                 }) 
             },
-            logout() {
+            logout() { // Logout user
                 document.getElementById('logout').style.display = "none";
                 document.getElementById('login').style.display = "block";
                 document.getElementById('username').innerHTML = "Guest";

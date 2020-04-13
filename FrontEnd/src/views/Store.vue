@@ -52,7 +52,8 @@ export default {
 
 <template>
     <div class = "Store">
-         <ul>
+      <h1>STORE</h1>
+      <ul>
         <!--<Items v-bind:items="items"/>-->
         <li v-for="(item, idx) in items" :key="idx">
           
@@ -61,15 +62,13 @@ export default {
           <p>${{item.itemPrice}}</p>
           
         </li>
-        </ul>
-        <div class = "clothes-container">
-            <div class = "clothes">
-            </div>
-        </div>
+      </ul>
+      <div class = "clothes-container">
+          <div class = "clothes">
+          </div>
+      </div>
     </div>
 </template>
-
-
 
 <script>
 import ClothesService from '../ClothesServices.js';
@@ -160,6 +159,13 @@ export default {
 h1 {
     font-size:3rem;
     font-weight: bold;
+    font-style: italic;
+    color: rgb(141, 197, 150);
+    text-align: center;
+}
+
+img {
+  cursor: pointer;
 }
 
 ul {
