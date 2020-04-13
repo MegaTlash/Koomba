@@ -22,9 +22,7 @@ export default {
         }
     },
     methods: {
-        removeItem(){
-            this.remove();
-        }
+
     }
 };
 </script>

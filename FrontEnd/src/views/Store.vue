@@ -57,7 +57,7 @@ export default {
         <!--<Items v-bind:items="items"/>-->
         <li v-for="(item, idx) in items" :key="idx">
           
-          <img :src="require(`@/assets/Models/Jordan/${item.imageURL}`)"/>
+          <img :src="require(`@/assets/Models/Jordan/${item.imageURL}`)" @click="redirectItem(require(`@/assets/Models/Jordan/${item.imageURL}`), item.itemType, item.itemPrice)"/>
           <p>{{item.itemType}}</p>
           <p>${{item.itemPrice}}</p>
           
@@ -139,6 +139,14 @@ export default {
     methods: {
       getImg(imgName) {
         return require(imgName)
+      },
+      redirectItem(img, type, price) { // Go to Item page and pass attributes of selected item to the page
+        this.$router.push({name: `Item`, params: {img: img, type: type, price: price}}).catch(e => {
+            if (e.name != "NavigationDuplicated") {
+                //console.log('no duplicates')
+                throw e;
+            }
+        }) 
       }
     },
     async created(){

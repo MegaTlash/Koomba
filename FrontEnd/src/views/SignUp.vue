@@ -173,7 +173,7 @@ export default {
 
                     //Succesful Registration
                     else{
-                        this.$router.push({name: `Home`}).catch(e => {
+                        this.$router.push({name: `Login`}).catch(e => {
                             if (e.name != "NavigationDuplicated") {
                                 throw e;
                             }
