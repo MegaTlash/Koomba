@@ -3,6 +3,7 @@
         <div class="KoombaImgAbout columns"> 
             <div class="column is-half">
                 <img src="../assets/Models/Harrith/harrithAboutMeProfilePic.jpg" class="harrithIMG">
+                
             </div>
             <div class="KoombaMessage column is-one-third">
                 <h1>ABOUT US</h1>
@@ -12,6 +13,7 @@
                     of graffiti, inspired by its unique hand styles. Our goal is to bring acknowledgement to the culture, 
                     bringing new eyes into our lifestyle. This is KOOMBA Gang.
                 </p>
+                <img src = "../assets/koombaSignature.png" class="koombaSig">
             </div>
         </div>
         
@@ -49,6 +51,14 @@ p {
     padding-top: 2rem;
     text-align: left;
     padding-right: 30rem;
+}
+
+.koombaSig{
+    float: left;
+    display:block;
+    margin-left: -5rem;
+    height:  auto;
+    width: 20rem;
 }
 
 </style>
