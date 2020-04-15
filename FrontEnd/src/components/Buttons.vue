@@ -1,7 +1,7 @@
 <template>
     <div class="buttons">
         <div id="username">Guest</div>
-        <i @click="redirectShoppingCart" class="fa fa-shopping-cart fa-2x"></i>
+        <i @click="redirectShoppingCart" class="fa fa-shopping-cart fa-2x"><div>{{$parent.cartItems.length}}</div></i>
         <div id="initial">
             <button @click="redirectSignIn" class="button is-success" >Sign-Up</button>
             <button @click="redirectLogin" class="button is-light" >Login</button>
@@ -17,7 +17,6 @@
             redirectSignIn() { // this method is called on button click
                 this.$router.push({name: `SignUp`}).catch(e => {
                     if (e.name != "NavigationDuplicated") {
-                        //console.log('no duplicates')
                         throw e;
                     }
                 }) 
@@ -25,7 +24,6 @@
             redirectLogin() { // this method is called on button click
                 this.$router.push({name: `Login`}).catch(e => {
                     if (e.name != "NavigationDuplicated") {
-                        //console.log('no duplicates')
                         throw e;
                     }
                 }) 
@@ -33,7 +31,6 @@
             redirectShoppingCart() {
                 this.$router.push({name: `ShoppingCart`}).catch(e => {
                     if (e.name != "NavigationDuplicated") {
-                        //console.log('no duplicates')
                         throw e;
                     }
                 }) 
@@ -49,6 +46,12 @@
 </script>
 
 <style scoped>
+i div {
+    font-family: Avenir, Helvetica, Arial, sans-serif;
+    font-weight: bold;
+    font-size: 1rem;
+}
+
 .fa-shopping-cart {
     padding-right: 2rem;
     cursor: pointer;

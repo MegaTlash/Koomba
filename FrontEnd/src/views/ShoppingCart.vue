@@ -15,7 +15,6 @@
 </template>
 
 <script>
-//import {itemToCartBus} from "../main";
 export default {
     name: 'ShoppingCart',
     methods: {
