@@ -78,7 +78,6 @@ export default {
 }
 
 .parallaxBackground {
-    background: url('');
     background-size: cover;
     background-attachment: fixed;
     min-height: 600px;

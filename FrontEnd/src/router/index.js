@@ -23,7 +23,7 @@ const routes = [
     {path: '/login', name: 'Login', component: Login},
     {path: '/shoppingcart', name: 'ShoppingCart', component: ShoppingCart},
     {path: '/item', name: 'Item', component: Item},
-    {path: '/launch', name: 'Launch', component: Launch}
+    {path: '/launch', name: 'Launch', component: Launch},
 ]
 
 
@@ -33,6 +33,6 @@ const router = new VueRouter({
     linkExactActiveClass: "exact-active",
 })
 
-router.replace("Home");
+router.replace("Launch");
 
 export default router;
