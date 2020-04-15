@@ -33,16 +33,10 @@ export default {
         this.price = this.$route.params.price;
     },
     methods: {
+        // Add chosen item to parent variable that holds cart items, allows for other pages to access it
         addToCart() {
-            this.$router.push({name: `ShoppingCart`, params: {img: this.img, type: this.type, price: this.price}}).catch(e => {
-               if (e.name != "NavigationDuplicated") {
-                    throw e;
-                }
-            }) 
-        },
-        //addToCart() {
-          //  itemToCartBus.$emit('add', this.img, this.type, this.price);
-        //}
+            this.$parent.cartItems.push({item: {img: this.img, type: this.type, price: this.price}});
+        }
     }
 }
 </script>

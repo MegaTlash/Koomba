@@ -16,21 +16,17 @@ import Nav from "@/components/Nav.vue";
 import Header from "@/components/Header.vue";
 import Footer from "@/components/Footer.vue";
 import Buttons from "@/components/Buttons.vue";
-//import Item from "@/views/Item.vue";
 
 export default {
   name: 'App',
+  data() {
+    return {
+      cartItems: []
+    }
+  },
   components: {
     Nav, Header, Footer, Buttons
   },
-  mounted: function() {
-    fetch('https://opentdb.com/api.php?amount=10&category=27&type=multiple', {
-        method: 'get'
-    })
-      .then((response) =>{
-          console.log(response.json())
-      })
-  }
 }
 </script>
 

@@ -10,6 +10,7 @@ import Login from '../views/Login.vue'
 import ShoppingCart from '../views/ShoppingCart.vue'
 import Item from '../views/Item.vue'
 import Launch from '../views/Launch.vue'
+import Checkout from '../views/Checkout.vue'
 
 Vue.use(VueRouter)
 
@@ -23,7 +24,8 @@ const routes = [
     {path: '/login', name: 'Login', component: Login},
     {path: '/shoppingcart', name: 'ShoppingCart', component: ShoppingCart},
     {path: '/item', name: 'Item', component: Item},
-    {path: '/launch', name: 'Launch', component: Launch}
+    {path: '/launch', name: 'Launch', component: Launch,},
+    {path: '/checkout', name: 'Checkout', component: Checkout}
 ]
 
 
