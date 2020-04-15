@@ -16,6 +16,8 @@
 </template>
 
 <script>
+//import {itemToCartBus} from "../main";
+
 export default {
     name: 'Item',
     data () {
@@ -33,12 +35,14 @@ export default {
     methods: {
         addToCart() {
             this.$router.push({name: `ShoppingCart`, params: {img: this.img, type: this.type, price: this.price}}).catch(e => {
-                if (e.name != "NavigationDuplicated") {
-                    //console.log('no duplicates')
+               if (e.name != "NavigationDuplicated") {
                     throw e;
                 }
             }) 
-        }
+        },
+        //addToCart() {
+          //  itemToCartBus.$emit('add', this.img, this.type, this.price);
+        //}
     }
 }
 </script>
