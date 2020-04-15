@@ -2,8 +2,8 @@
     <div class="ShoppingCart">
         <h1>CART</h1>
         <ul>
-            <li v-for="item in items" :key="item.name">
-                {{ item.name }}
+            <li id="cart">
+                {{item}}
                 <button  class="button is-success" v-on:click="items.splice(item, 1)">Remove</button>
             </li>
         </ul>
@@ -15,14 +15,11 @@ export default {
     name: 'ShoppingCart',
     data() {
         return {
-            items: [
-                { name: 'Item' },
-                { name: 'Item2' }
-            ]
+            item: ''
         }
     },
-    methods: {
-
+    created() {
+        this.item += `${this.$route.params.type} ${this.$route.params.price}`;
     }
 };
 </script>

@@ -5,7 +5,7 @@
       <div id="chat">
         <i class="fa fa-angle-double-up fa-2x" @click="popup"></i>Chat
         <div id="messages">
-          <div>Tom:  Hi, would you like any assistance?</div>
+          <div>Ask a question and you will reach you with assistance.</div>
         </div>
         <div id="chatForm">
           <input v-on:keyup.enter="addMessage" type="text" name="message" id="messageField" />
