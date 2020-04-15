@@ -2,8 +2,10 @@
     <div class="buttons">
         <div id="username">Guest</div>
         <i @click="redirectShoppingCart" class="fa fa-shopping-cart fa-2x"></i>
-        <button @click="redirectSignIn" class="button is-success">Sign-Up</button>
-        <button @click="redirectLogin" class="button is-light" id="login">Login</button>
+        <div id="initial">
+            <button @click="redirectSignIn" class="button is-success" >Sign-Up</button>
+            <button @click="redirectLogin" class="button is-light" >Login</button>
+        </div>
         <button @click="logout" class="button is-light" id="logout">Logout</button>
     </div>
 </template>
@@ -38,7 +40,7 @@
             },
             logout() { // Logout user
                 document.getElementById('logout').style.display = "none";
-                document.getElementById('login').style.display = "block";
+                document.getElementById('initial').style.display = "block";
                 document.getElementById('username').innerHTML = "Guest";
             }
         },
@@ -62,7 +64,7 @@
   margin-right: 2rem;
 }
 
-#login {
+#initial {
     display: block;
 }
 

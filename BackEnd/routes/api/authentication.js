@@ -1,14 +1,8 @@
 const express = require('express');
-//const bodyParser = require('body-parser');
-//const cors = require('cors');
 const User = require('../../models/User');
 const bcrypt = require('bcrypt');
 
-//const app = express();
 router = express.Router()
-
-//app.use(bodyParser.json());
-//app.use(cors());
 
 //Process for registering a new user
 router.post('/signup', (req, res, next) =>{
@@ -117,11 +111,10 @@ router.post('/signup', (req, res, next) =>{
 
 //Function to check if email is valid
 //Must be in the format example@123.com
-function validateEmail(email) 
-    {
+function validateEmail(email) {
         var re = /\S+@\S+\.\S+/;
         return re.test(email);
-    }
+}
 
 //Process for logging in
 router.post('/login', (req, res, next) => {
@@ -166,8 +159,11 @@ router.post('/login', (req, res, next) => {
             else{
                 //Password matches (Login successful)
                 if (bcrypt.compareSync(password, result[0].hashedPassword)) {
+                    
                     return res.json({
-                       title: 'Login Success'
+                       title: 'Login Success',
+
+                       firstName: result[0].firstName
                     })
                 }
                 

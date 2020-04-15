@@ -10,7 +10,7 @@
             <!-- Email Input -->
             <div class="field">
                 <p class="control has-icons-left has-icons-right">
-                    <input :class="inputType1" type="email" v-model="email" placeholder="Email">
+                    <input @keyup.enter="login" :class="inputType1" type="email" v-model="email" placeholder="Email">
                     <span class="icon is-small is-left">
                         <i class="fas fa-envelope"></i>
                     </span>
@@ -24,7 +24,7 @@
             <!-- Password Input -->
             <div class="field">
                 <p class="control has-icons-left has-icons-right">
-                    <input :class="inputType2" type="password" v-model="password" placeholder="Password">
+                    <input @keyup.enter="login" :class="inputType2" type="password" v-model="password" placeholder="Password">
                     <span class="icon is-small is-left">
                         <i class="fas fa-envelope"></i>
                     </span>
@@ -71,7 +71,6 @@ export default {
             }
         
             axios.post('http://localhost:3000/login', user).then(res => {
-                console.log(res)
                 if (res.data.title == 'errors'){
                     
                     //Email error check
@@ -105,10 +104,11 @@ export default {
 
                 //Login Successful
                 else {
+                    
                     // Take away login option and replace it with login
-                    document.getElementById('login').style.display = "none";
+                    document.getElementById('initial').style.display = "none";
                     document.getElementById('logout').style.display = "block";
-                    document.getElementById('username').innerHTML = this.email;
+                    document.getElementById('username').innerHTML = res.data.firstName;
                     // Go home
                     this.$router.push({name: `Home`}).catch(e => {
                         if (e.name != "NavigationDuplicated") {
