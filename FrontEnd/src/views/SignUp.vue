@@ -10,7 +10,7 @@
              <!-- First Name Input -->
             <div class="field">
                 <p class="control has-icons-left has-icons-right">
-                    <input :class="inputType1" type="text" v-model="firstName" placeholder="First Name">
+                    <input @keyup.enter="register" :class="inputType1" type="text" v-model="firstName" placeholder="First Name">
                     <span class="icon is-small is-left">
                         <i class="fas fa-user"></i>
                     </span>
@@ -24,7 +24,7 @@
             <!-- Last Name Input -->
             <div class="field">
                 <p class="control has-icons-left has-icons-right">
-                    <input :class="inputType2" type="text" v-model="lastName" placeholder="Last Name">
+                    <input @keyup.enter="register" :class="inputType2" type="text" v-model="lastName" placeholder="Last Name">
                     <span class="icon is-small is-left">
                         <i class="fas fa-id-card"></i>
                     </span>
@@ -38,7 +38,7 @@
             <!-- Email Input -->
             <div class="field">
                 <p class="control has-icons-left has-icons-right">
-                    <input :class="inputType3" type="email" v-model="email" placeholder="Email">
+                    <input @keyup.enter="register" :class="inputType3" type="email" v-model="email" placeholder="Email">
                     <span class="icon is-small is-left">
                         <i class="fas fa-envelope"></i>
                     </span>
@@ -52,7 +52,7 @@
             <!-- Password Input -->
             <div class="field">
                 <p class="control has-icons-left has-icons-right">
-                    <input :class="inputType4" type="password" v-model="password" placeholder="Password">
+                    <input @keyup.enter="register" :class="inputType4" type="password" v-model="password" placeholder="Password">
                     <span class="icon is-small is-left">
                         <i class="fas fa-envelope"></i>
                     </span>
