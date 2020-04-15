@@ -4,11 +4,14 @@
         <ul>
             <li v-for="item in items" :key="item.name">
                 {{ item.name }}
+                {{ item.price }}
                 <button class="button is-success" v-on:click="items.splice(item, 1)">Remove</button>
             </li>
             <button id="checkout" class ="button is-success" v-on:click="redirectItem">Checkout</button>
         </ul>
+        <Checkout checkoutItems='items' />
     </div>
+    
 </template>
 
 <script>
@@ -18,7 +21,9 @@ export default {
         return {
             items: [
                 { name: 'Item' },
-                { name: 'Item2' }
+                { name: 'Item2' },
+                { price: '50'},
+                { price: '70'}
             ]
         }
     },
@@ -30,7 +35,11 @@ export default {
                 throw e;
             }
         }) 
+        },
+        submit: function() {
+            this.$emit("currentCart", this.items);
         }
+        
     }
 };
 </script>
