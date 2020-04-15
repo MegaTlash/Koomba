@@ -71,67 +71,12 @@ export default {
 </template>
 
 <script>
-import ClothesService from '../ClothesServices.js';
+import axios from 'axios';
 export default {
     name: 'Store',
     data(){
         return {
-            items: [
-              /*{
-            _id: "001",
-            itemType: "T-Shirt",
-            itemPrice: "25",
-            itemColour: "Blue",
-            detailsURL: "/tbd?id=001",
-            imageURL: require('../assets/Models/Jordan/JordanOutsidePicRain.jpg')
-          },
-
-          {
-            _id: "002",
-            itemType: "Sweater",
-            itemPrice: "60",
-            itemColour: "Black",
-            detailsURL: "/tbd?id=002",
-            imageURL: require('../assets/Models/Jordan/JordanOutsidePicRain.jpg')
-          },
-
-          {
-            _id: "002",
-            itemType: "Sweater",
-            itemPrice: "60",
-            itemColour: "Black",
-            detailsURL: "/tbd?id=002",
-            imageURL: require('../assets/Models/Jordan/JordanOutsidePicRain.jpg')
-          },
-
-          {
-            _id: "002",
-            itemType: "Sweater",
-            itemPrice: "60",
-            itemColour: "Black",
-            detailsURL: "/tbd?id=002",
-            imageURL: require('../assets/Models/Jordan/JordanOutsidePicRain.jpg')
-          },
-
-          {
-            _id: "002",
-            itemType: "Sweater",
-            itemPrice: "60",
-            itemColour: "Black",
-            detailsURL: "/tbd?id=002",
-            imageURL: require('../assets/Models/Jordan/JordanOutsidePicRain.jpg')
-          },
-
-          {
-            _id: "002",
-            itemType: "Sweater",
-            itemPrice: "60",
-            itemColour: "Black",
-            detailsURL: "/tbd?id=002",
-            imageURL: require('../assets/Models/Jordan/JordanOutsidePicRain.jpg')
-          }*/
-
-          ],
+            items: [],
             error: '',
             text: '',
         }
@@ -149,14 +94,11 @@ export default {
         }) 
       }
     },
-    async created(){
-        try{
-            this.items = await ClothesService.getClothes();
-            console.log(this.items);
-        }catch(err){
-            this.error = err.message;
-        }
-    }
+    created: function(){
+      axios.get('http://localhost:3000/api/clothes')
+      .then((response) => this.items = response.data)
+      .catch((error) => this.error = error);
+    },
 };
 
 
