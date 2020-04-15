@@ -4,8 +4,9 @@
         <ul>
             <li v-for="item in items" :key="item.name">
                 {{ item.name }}
-                <button  class="button is-success" v-on:click="items.splice(item, 1)">Remove</button>
+                <button class="button is-success" v-on:click="items.splice(item, 1)">Remove</button>
             </li>
+            <button id="checkout" class ="button is-success" v-on:click="redirectItem">Checkout</button>
         </ul>
     </div>
 </template>
@@ -22,7 +23,14 @@ export default {
         }
     },
     methods: {
-
+        redirectItem() {
+            this.$router.push({name: `Checkout`}).catch(e => {
+            if (e.name != "NavigationDuplicated") {
+                //console.log('no duplicates')
+                throw e;
+            }
+        }) 
+        }
     }
 };
 </script>
@@ -49,5 +57,9 @@ li {
 
 button {
    margin-left: 4rem;
+}
+
+#checkout {
+    margin: 2rem;
 }
 </style>
