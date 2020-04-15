@@ -13,33 +13,33 @@
 
         <p class = "Welcome">Welcome</p>
         <!--These are the images for showing-->
-        <div class = "HomeImages">
-            
-            <!--These sets are the rainy pictures-->
-            <div class = "columns ">
-                <div class = "picRow column is-one-third">
-                    <img src="../assets/Models/Jordan/JordanOutsidePicRain.jpg">
+        <div class = "HomeImages" >
+            <div class = "parallaxBackground" v-parallax="0.2">
+                <!--These sets are the rainy pictures-->
+                <div class = "columns ">
+                    <div class = "picRow column is-one-third">
+                        <img src="../assets/Models/Jordan/JordanOutsidePicRain.jpg">
+                    </div>
+                    <div class = "picRow column is-one-third">
+                        <img src="../assets/Models/Harrith/HarrithCarPicOutsideRain.jpg">
+                    </div>
+                    
+                    <div class = "picRow column is-one-third">
+                        <img src="../assets/Models/Tam/TamCarPicOutside.jpg">
+                    </div>
                 </div>
-                <div class = "picRow column is-one-third">
-                    <img src="../assets/Models/Harrith/HarrithCarPicOutsideRain.jpg">
-                </div>
-                
-                <div class = "picRow column is-one-third">
-                    <img src="../assets/Models/Tam/TamCarPicOutside.jpg">
+
+                <!--Different sets of pictures-->
+                <div class = "columns ">
+                    <div class = "picRow column is-one-third">
+                        <img src="../assets/Models/Ghafoor/GhafoorPicsTunnel.jpg">
+                    </div>
+                    <div class = "picRow column is-one-third">
+                        <img src="../assets/Models/Harrith/harrithBeanie.jpg">
+                    </div>
+                    
                 </div>
             </div>
-
-            <!--Different sets of pictures-->
-            <div class = "columns ">
-                <div class = "picRow column is-one-third">
-                    <img src="../assets/Models/Ghafoor/GhafoorPicsTunnel.jpg">
-                </div>
-                <div class = "picRow column is-one-third">
-                    <img src="../assets/Models/Harrith/harrithBeanie.jpg">
-                </div>
-                
-            </div>
-
             <!--Row-->
         </div>
     </div>
@@ -52,6 +52,7 @@ export default {
     name: 'Home',
 };
 </script>
+
 
 
 <style scoped>
@@ -69,13 +70,21 @@ export default {
 }
 
 .parallax {
-    background: url('../assets/Models/Harrith/HarrithCarOutsideParallax.jpg');
+    background: url('../assets/Models/Harrith/HarrithSittingDownGraf.jpg');
     background-size: cover;
     background-attachment: fixed;
     min-height: 600px;
     width: auto;
 }
 
+.parallaxBackground {
+    background: url('');
+    background-size: cover;
+    background-attachment: fixed;
+    min-height: 600px;
+    width: auto;
+    
+}
 .parallaxSig{
     min-height: 600px;
 }
