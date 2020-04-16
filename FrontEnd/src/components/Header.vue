@@ -23,6 +23,7 @@ export default {
 <style scoped>
 
 .header {
+  margin-top: 60px;
   text-align: center;
 }
 

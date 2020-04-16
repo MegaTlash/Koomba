@@ -7,6 +7,7 @@
                 <a class = "navbar-item"><router-link to = "/instagram">Instagram</router-link></a>
                 <a class = "navbar-item"><router-link to = "/contact">Contact</router-link></a>
                 <a class = "navbar-item"><router-link to = "/aboutme" active-class = "active">About Us</router-link></a>
+                <a class = "navbar-item"><router-link to = "/graph"> Graph </router-link></a>
             </div>
         </div> 
     </nav>
