@@ -35,7 +35,7 @@ export default {
     methods: {
         // Add chosen item to parent variable that holds cart items, allows for other pages to access it
         addToCart() {
-            this.$parent.cartItems.push({item: {img: this.img, type: this.type, price: this.price}});
+            this.$parent.cartItems.push({img: this.img, type: this.type, price: this.price});
         }
     }
 }

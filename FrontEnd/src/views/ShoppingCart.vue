@@ -3,9 +3,9 @@
         <h1>CART</h1>
         <div v-if="item" v-html="item"></div>
         <ul>
-            <li id="cart" v-for="i in $parent.cartItems" :key="i.item">
-                <img :src='i.item.img'/>
-                {{i.item.type}} - ${{i.item.price}}
+            <li id="cart" v-for="i in $parent.cartItems" :key="i">
+                <img :src='i.img'/>
+                {{i.type}} - ${{i.price}}
                 <button class="button is-success" id="remove" v-on:click="$parent.cartItems.splice(i, 1)">Remove</button>
             </li>
             <button id="checkout" class ="button is-success" v-on:click="redirectCheckout">Checkout</button>
