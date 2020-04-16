@@ -16,6 +16,7 @@
 </template>
 
 <script>
+//import {itemToCartBus} from "../main";
 
 export default {
     name: 'Item',
@@ -32,8 +33,9 @@ export default {
         this.price = this.$route.params.price;
     },
     methods: {
+        // Add chosen item to parent variable that holds cart items, allows for other pages to access it
         addToCart() {
-            
+            this.$parent.cartItems.push({item: {img: this.img, type: this.type, price: this.price}});
         }
     }
 }

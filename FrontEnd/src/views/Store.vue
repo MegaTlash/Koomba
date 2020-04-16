@@ -56,7 +56,6 @@ export default {
       <ul>
         <!--<Items v-bind:items="items"/>-->
         <li v-for="(item, idx) in items" :key="idx">
-          
           <img :src="require(`@/assets/Clothes/${item.imageURL}`)" @click="redirectItem(require(`@/assets/Clothes/${item.imageURL}`), item.itemType, item.itemPrice)"/>
           <p>{{item.itemType}}</p>
           <p>${{item.itemPrice}}</p>

@@ -1,15 +1,15 @@
 <template>
     <div class="ShoppingCart">
         <h1>CART</h1>
+        <div v-if="item" v-html="item"></div>
         <ul>
-            <li v-for="item in items" :key="item.name">
-                {{ item.name }}
-                {{ item.price }}
-                <button class="button is-success" v-on:click="items.splice(item, 1)">Remove</button>
+            <li id="cart" v-for="i in $parent.cartItems" :key="i.item">
+                <img :src='i.item.img'/>
+                {{i.item.type}} - ${{i.item.price}}
+                <button class="button is-success" id="remove" v-on:click="$parent.cartItems.splice(i, 1)">Remove</button>
             </li>
-            <button id="checkout" class ="button is-success" v-on:click="redirectItem">Checkout</button>
+            <button id="checkout" class ="button is-success" v-on:click="redirectCheckout">Checkout</button>
         </ul>
-        <Checkout checkoutItems='items' />
     </div>
     
 </template>
@@ -17,29 +17,15 @@
 <script>
 export default {
     name: 'ShoppingCart',
-    data() {
-        return {
-            items: [
-                { name: 'Item' },
-                { name: 'Item2' },
-                { price: '50'},
-                { price: '70'}
-            ]
-        }
-    },
     methods: {
-        redirectItem() {
+        // Go to checkout page if Checkout button is clicked
+        redirectCheckout() {
             this.$router.push({name: `Checkout`}).catch(e => {
-            if (e.name != "NavigationDuplicated") {
-                //console.log('no duplicates')
-                throw e;
-            }
-        }) 
-        },
-        submit: function() {
-            this.$emit("currentCart", this.items);
+                if (e.name != "NavigationDuplicated") {
+                    throw e;
+                }
+            });
         }
-        
     }
 };
 </script>
@@ -54,18 +40,23 @@ h1 {
 
 ul {
     padding-top: 2rem;
-    width: 40%;
+    width: 60%;
     margin: auto;
 }
 
 li {
-    padding: 2rem;
-    border: 1px solid rgb(141, 197, 150);
-    border-radius: 15px;
+    font-size: 1.5rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid rgb(141, 197, 150);
 }
 
-button {
-   margin-left: 4rem;
+img {
+    width: 15%;
+}
+
+#remove {
+   float: right;
+   margin-top: 1.5rem;
 }
 
 #checkout {

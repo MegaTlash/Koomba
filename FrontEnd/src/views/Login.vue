@@ -104,11 +104,17 @@ export default {
 
                 //Login Successful
                 else {
-                    
                     // Take away login option and replace it with login
                     document.getElementById('initial').style.display = "none";
                     document.getElementById('logout').style.display = "block";
-                    document.getElementById('username').innerHTML = res.data.firstName;
+
+                    // Change the first name of the user 
+                    this.$parent.firstname = res.data.firstName;
+                    document.getElementById('username').innerHTML = this.$parent.firstname;
+
+                    // Reset chat
+                    document.getElementById('messages').innerHTML = "Ask a question if you require any assistance." // Reset chat
+            
                     // Go home
                     this.$router.push({name: `Home`}).catch(e => {
                         if (e.name != "NavigationDuplicated") {
@@ -118,7 +124,6 @@ export default {
                 }  
             })
         },
-
     }
 };
 </script>

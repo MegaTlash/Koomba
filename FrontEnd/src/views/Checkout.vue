@@ -1,7 +1,7 @@
 <template>
     <div class="Checkout">
         <h1>YOOOOO</h1>
-        <items @currentCart="getItems(currentCart)" />
+        {{checkoutItems}}
         <!--<items v-for="(item, idx) in checkoutItems" :key="idx">
             {{}}
         </items>-->
@@ -9,22 +9,18 @@
 </template>
 
 <script>
-import items from './ShoppingCart'
 export default {
     name: 'Checkout',
-    components: {
-        items
-    },
     data: function() {
         return {
             checkoutItems: []
         };
     },
-
+    created() {
+        this.checkoutItems = this.$route.params.checkoutItems;
+    },
     methods: { 
-        getItems(variable) {
-            this.checkoutItems = variable;
-        }
+
     }
 }
 

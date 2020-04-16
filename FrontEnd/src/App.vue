@@ -33,9 +33,15 @@ import Buttons from "@/components/Buttons.vue";
 
 export default {
   name: 'App',
+  data() {
+    return {
+      cartItems: [],
+      firstname: 'Guest'
+    }
+  },
   components: {
     Nav, Header, Footer, Buttons
-  }
+  },
 }
 </script>
 

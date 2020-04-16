@@ -3,20 +3,12 @@
   <footer class="footer">
     <div class="content has-text-centered">
       <div class = "koombaSig">
-        
       </div>
-      <!--<p>
-        <strong>Bulma</strong> by <a href="https://jgthms.com">Jeremy Thomas</a>. The source code is licensed
-        <a href="http://opensource.org/licenses/mit-license.php">MIT</a>. The website content
-        is licensed <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY NC SA 4.0</a>.
-      </p>
-
-      <img src="https://lh3.googleusercontent.com/proxy/SF0Tr9rcM11D-b4T3_lOV2iU8EDGbaK6ixwzhusJHKBQBOtGZPJIAjrfwCpxu_3VY1YvhZ4ixap7RKlx1z7y2bvPhFfqDuuoCMDxcJVZ8RSn0zaAxl8" 
-          alt="Twitter" width=50 height=50>-->
       <div id="chat">
-        <i class="fa fa-angle-double-up fa-2x" @click="popup"></i>Chat
+        <i id="arrow" class="fa fa-angle-double-up fa-2x" @click="popup"></i>
+        Chat
         <div id="messages">
-          <div>Tom:  Hi, would you like any assistance?</div>
+          <div>Ask a question if you require any assistance.</div>
         </div>
         <div id="chatForm">
           <input v-on:keyup.enter="addMessage" type="text" name="message" id="messageField" />
@@ -34,9 +26,11 @@ export default {
       // Close chat if its open
       if (document.getElementById("chat").style.height == "20rem"){
         document.getElementById("chat").style.height = "3rem";
+        document.getElementById("arrow").className = "fa fa-angle-double-up fa-2x";
       }
       else { // Open chat if its closed
         document.getElementById("chat").style.height = "20rem";
+        document.getElementById("arrow").className = "fa fa-angle-double-down fa-2x";
       }
     },
     addMessage() { // Some of the chat code was taken from my Lab 3 (Shawn)
@@ -44,7 +38,7 @@ export default {
 
       // Create text message with the value entered
       let newListItem = document.createElement('div');
-      newListItem.appendChild(document.createTextNode("You: " + messageField.value + "\n"));
+      newListItem.appendChild(document.createTextNode(this.$parent.firstname + ": " + messageField.value + "\n"));
 
       // Insert new message
       let messages = document.getElementById('messages');
@@ -75,6 +69,12 @@ export default {
   float: left;
 }
 
+.fa-angle-double-down {
+  color: #2A543C;
+  margin-bottom: 1rem;
+  float: left;
+}
+
 #chat {
 	display: block;
 	position: fixed;
@@ -87,13 +87,18 @@ export default {
 	border: 1px solid rgb(141, 197, 150);
 }
 
-div #messages {
+#messages {
   text-align: left;
   padding-top: 0.5rem;
 	padding-left: 1rem;
   width: 250px;
   height: 200px;
   overflow: auto;
+}
+
+#messages div {
+  padding-right: 10px;
+  padding-bottom: 10px;
 }
 
 #chatForm {
