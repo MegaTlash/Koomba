@@ -2,15 +2,14 @@
     <div class="ShoppingCart">
         <h1>CART</h1>
         <ul>
-            <li id="cart" v-for="i in $parent.cartItems" :key="i">
+            <li id="cart" v-for="(i, index) in $parent.cartItems" :key="index">
                 <img :src="require(`@/assets/Clothes/${i.img}`)"/>
                 {{i.type}} - ${{i.price}}
-                <button class="button is-success" id="remove" @click="remove()">Remove</button>
+                <button class="button is-success" id="remove" v-on:click="$parent.cartItems.splice(index, 1)">Remove</button>
             </li>
             <button id="checkout" class ="button is-success" v-on:click="redirectCheckout">Checkout</button>
         </ul>
     </div>
-    
 </template>
 
 <script>
@@ -25,10 +24,6 @@ export default {
                     throw e;
                 }
             });
-        }, 
-        // Remove cart item
-        remove() {
-            console.log(this.$parent.cartItems[0]);
         }
     }
 };
