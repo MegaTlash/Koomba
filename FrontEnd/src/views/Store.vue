@@ -64,6 +64,9 @@ export default {
       </ul>
       <div class = "clothes-container">
           <div class = "clothes">
+            <div class= "buttons">
+              <button @click="redirectGraph" class = "button is-success" id = "analytics">Anayltics</button>
+            </div>
           </div>
       </div>
     </div>
@@ -91,6 +94,13 @@ export default {
                 throw e;
             }
         }) 
+      },
+      redirectGraph(){
+        this.$router.push({name: `Graph`}).catch(e => {
+          if(e.name != "Navigation Duplicated"){
+            throw e;
+          }
+        })
       }
     },
     created: function(){
@@ -128,6 +138,12 @@ ul li {
     list-style: none;
     flex-basis: 33.333333%;
     padding: 3rem;
+}
+
+#analytics{
+  margin: auto;
+  display: flex; 
+  justify-content: center;
 }
 
 ul li p{
