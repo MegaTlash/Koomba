@@ -21,7 +21,8 @@ export default {
   name: 'App',
   data() {
     return {
-      cartItems: []
+      cartItems: [],
+      firstname: 'Guest'
     }
   },
   components: {

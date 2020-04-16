@@ -1,6 +1,6 @@
 <template>
     <div class="buttons">
-        <div id="username">Guest</div>
+        <div id="username">{{this.$parent.firstname}}</div>
         <i @click="redirectShoppingCart" class="fa fa-shopping-cart fa-2x"><div>{{$parent.cartItems.length}}</div></i>
         <div id="initial">
             <button @click="redirectSignIn" class="button is-success" >Sign-Up</button>
@@ -38,7 +38,9 @@
             logout() { // Logout user
                 document.getElementById('logout').style.display = "none";
                 document.getElementById('initial').style.display = "block";
-                document.getElementById('username').innerHTML = "Guest";
+                this.$parent.firstname = "Guest";
+                document.getElementById('username').innerHTML = this.$parent.firstname;
+                document.getElementById('messages').innerHTML = "Ask a question if you require any assistance." // Reset chat
             }
         },
         
