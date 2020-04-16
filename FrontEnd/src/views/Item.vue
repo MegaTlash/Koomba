@@ -3,7 +3,7 @@
         <div class="columns">
             <div class="column is-quarter"></div>
             <div class="column is-quarter">
-                <img :src='img'/>
+                <img :src="require(`@/assets/Clothes/${img}`)"/>
             </div>
             <div class="column is-quarter" id="info">
                 <h1>{{type}}</h1>
@@ -16,8 +16,6 @@
 </template>
 
 <script>
-//import {itemToCartBus} from "../main";
-
 export default {
     name: 'Item',
     data () {
@@ -35,7 +33,7 @@ export default {
     methods: {
         // Add chosen item to parent variable that holds cart items, allows for other pages to access it
         addToCart() {
-            this.$parent.cartItems.push({item: {img: this.img, type: this.type, price: this.price}});
+            this.$parent.cartItems.push({img: this.img, type: this.type, price: this.price});
         }
     }
 }
