@@ -36,6 +36,7 @@ export default {
                 this.totalAfterTax += parseFloat(this.$parent.cartItems[i].price);
             }
             this.totalAfterTax += this.totalAfterTax * 0.13;
+            this.totalAfterTax = this.totalAfterTax.toFixed(2); // Two decimal places for money
             return this.totalAfterTax;
         },
         // This function calculates the total before tax
@@ -43,6 +44,7 @@ export default {
             for (var i=0; i<this.$parent.cartItems.length; i++) {
                 this.totalBeforeTax += parseFloat(this.$parent.cartItems[i].price);
             }
+            this.totalBeforeTax = this.totalBeforeTax.toFixed(2); // Two decimal places for money
             return this.totalBeforeTax;
         },
         // This function distinguishes the unique items in the store

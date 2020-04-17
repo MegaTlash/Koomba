@@ -42,7 +42,7 @@ export default {
             }
         }) 
       },
-      redirectGraph(){
+      redirectGraph(){ // Go to analytics page
         this.$router.push({name: `Graph`}).catch(e => {
           if(e.name != "Navigation Duplicated"){
             throw e;
