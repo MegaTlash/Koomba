@@ -1,24 +1,27 @@
-# koomba
+# Koomba
 
-## Project setup
+## Installation
+To install the node modules, you need to move into both the **FrontEnd** and **BackEnd** folders and run the command:
 ```
 npm install
 ```
 
-### Compiles and hot-reloads for development
+## Running Koomba
+In order to run both the front-end and back-end, we need to have two terminals open; one in the **FrontEnd** folder and one in the **BackEnd** folder. 
+
+### Running Front-End
 ```
 npm run serve
 ```
 
-### Compiles and minifies for production
+### Running Back-End
 ```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
+nodemon index.js
 ```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+## Authors
+
+ - Tamilesh Balasuntharam
+ - Shawn Yama
+ - James Gillies
+ - Kim Montemayor
