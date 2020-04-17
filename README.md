@@ -1,4 +1,5 @@
 # Koomba
+An online clothing store developed in VueJs and NodeJs.
 
 ## Installation
 To install the node modules, you need to move into both the **FrontEnd** and **BackEnd** folders and run the command:
@@ -18,6 +19,9 @@ npm run serve
 ```
 nodemon index.js
 ```
+
+## Database
+Used MongoDB Cloud Database.
 
 ## Authors
 
