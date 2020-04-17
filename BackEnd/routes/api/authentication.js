@@ -4,55 +4,58 @@ const bcrypt = require('bcrypt');
 
 router = express.Router()
 
-//Process for registering a new user
+// Process for registering a new user
 router.post('/signup', (req, res, next) =>{
 
+    // Storing user input
     firstName = req.body.firstName;
     lastName = req.body.lastName;
     email = req.body.email;
     password = req.body.password;
 
+    // Used for recording errors
     var errorFN = '', errorLN = '', errorEmail = '', errorPass = '';
     var isErrFN = false, isErrLN = false, isErrEmail = false, isErrPass = false;
 
-    //First name input field is left empty
+    // First name input field is left empty
     if (firstName == ''){
         errorFN = 'First name cannot be empty';
         isErrFN = true;
     }
 
-    //Last name input field is left empty
+    // Last name input field is left empty
     if (lastName == ""){
         errorLN = 'Last name cannot be empty';
         isErrLN = true;
     }
 
-    //Email input field is left empty
+    // Email input field is left empty
     if (email == ''){
         errorEmail = 'E-mail cannot be empty';
         isErrEmail = true;
     }
+    // Checking if email given is in the correct format
     else if(validateEmail(email) == false){
         console.log('email is not valid')
         errorEmail = 'E-mail is not in the correct format - example@123.com';
         isErrEmail = true;
     }
 
-    //Password input field is left empty
+    // Password input field is left empty
     if (password == ''){
         errorPass = 'Password cannot be empty';
         isErrPass = true;
     }
-    //Password given is less than 6 characters
+    // Password given is less than 6 characters
     else if (password.length < 6){
         errorPass = 'Password must be at least 6 characters';
         isErrPass = true;
     }
 
-    //Hashing password
+    // Hashing password
     hashedPassword = bcrypt.hashSync(password, 10);
     
-    //Catching errors
+    // Catching errors
     if(isErrFN || isErrLN || isErrPass || isErrEmail){
         
         return res.json({
@@ -70,7 +73,7 @@ router.post('/signup', (req, res, next) =>{
         })
     }
 
-    //Creating a new user
+    // Creating a new user
     const newUser = new User({
         firstName: firstName,
         lastName: lastName,
@@ -78,10 +81,10 @@ router.post('/signup', (req, res, next) =>{
         hashedPassword: hashedPassword
     });
 
-    //Saving new user to mongo database
+    // Saving new user to mongo database
     newUser.save(function(error){
 
-        //If email given is found in database
+        // If email given is found in database
         if (error) {
             return res.json({
                 title: 'errors',
@@ -98,7 +101,7 @@ router.post('/signup', (req, res, next) =>{
             })
         }
 
-        //No errors in input
+        // No errors in input
         return res.json({
             firstName: firstName,
             lastName: lastName,
@@ -109,20 +112,21 @@ router.post('/signup', (req, res, next) =>{
     
 });
 
-//Function to check if email is valid
-//Must be in the format example@123.com
+// Function to check if email is valid
+// Must be in the format example@123.com
 function validateEmail(email) {
         var re = /\S+@\S+\.\S+/;
         return re.test(email);
 }
 
-//Process for logging in
+// Process for logging in
 router.post('/login', (req, res, next) => {
 
+    // Storing user input
     email = req.body.email;
     password = req.body.password;
     
-    //Checking if email and password are empty
+    // Checking if email and password are empty
     if (email == '' && password == ''){
         return res.json({
             title: 'errors',
@@ -132,7 +136,7 @@ router.post('/login', (req, res, next) => {
             passError: 'Password cannot be left empty'
         })
     }
-    //Checking if email is left empty and password isn't
+    // Checking if email is left empty and password isn't
     else if (email == '' && password != ''){
         return res.json({
             title: 'errors',
@@ -142,10 +146,10 @@ router.post('/login', (req, res, next) => {
             passError: 'Email cannot be left empty'
         })
     }else{
-        //Finding user in database
+        // Finding user in database
         User.find({email: email}).then(function(result){
 
-            //No user is found in the database
+            // No user is found in the database
             if (result.length != 1){
                 return res.json({
                     title: 'errors',
@@ -155,22 +159,20 @@ router.post('/login', (req, res, next) => {
                     passError: 'Email does not exist'
                 })
             }
-            //User found, now check password
+            // User found, now check password
             else{
-                //Password matches (Login successful)
+                // Password matches (Login successful)
                 if (bcrypt.compareSync(password, result[0].hashedPassword)) {
-                    
                     return res.json({
                        title: 'Login Success',
-
                        firstName: result[0].firstName
                     })
                 }
                 
-                //Password does not match
+                // Password does not match
                 else{
                     
-                    //Password input field is left empty
+                    // Password input field is left empty
                     if (password == ''){
                         return res.json({
                             title: 'errors',
@@ -179,7 +181,7 @@ router.post('/login', (req, res, next) => {
                         })
                     }
 
-                    //Invalid password given
+                    // Invalid password given
                     return res.json({
                         title: 'errors',
                         passNoMatch: true,
@@ -191,4 +193,5 @@ router.post('/login', (req, res, next) => {
     }
 });
 
+// Exporting router for index.js to use
 module.exports = router;
