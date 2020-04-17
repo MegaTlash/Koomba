@@ -9,7 +9,7 @@ import SignUp from '../views/SignUp.vue'
 import Login from '../views/Login.vue'
 import ShoppingCart from '../views/ShoppingCart.vue'
 import Item from '../views/Item.vue'
-import Launch from '../views/Launch.vue'
+//import Launch from '../views/Launch.vue'
 import Checkout from '../views/Checkout.vue'
 import Graph from '../views/Graph.vue'
 
@@ -25,11 +25,10 @@ const routes = [
     {path: '/login', name: 'Login', component: Login},
     {path: '/shoppingcart', name: 'ShoppingCart', component: ShoppingCart},
     {path: '/item', name: 'Item', component: Item},
-    {path: '/launch', name: 'Launch', component: Launch, meta: {hideNavigation: true}},
+    //{path: '/launch', name: 'Launch', component: Launch, meta: {hideNavigation: true}},
     {path: '/checkout', name: 'Checkout', component: Checkout},
     {path: '/graph', name: 'Graph', component:Graph},
 ]
-
 
 const router = new VueRouter({
     routes,

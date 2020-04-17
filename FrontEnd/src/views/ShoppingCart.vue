@@ -18,7 +18,6 @@ export default {
     methods: {
         // Go to checkout page if Checkout button is clicked
         redirectCheckout() {
-            console.log(this.$parent.cartItems);
             this.$router.push({name: `Checkout`}).catch(e => {
                 if (e.name != "NavigationDuplicated") {
                     throw e;
