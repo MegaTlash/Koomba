@@ -2,6 +2,7 @@
     <nav class="navbar" role="navigation" aria-label="main navigation">
         <div id = "navbarContents" class = "navbar-menu">
             <div class="navbar-start">
+                <!--Connecting all the pages in teh navbar-->
                 <a class = "navbar-item"><router-link to = "/home">Home</router-link></a>
                 <a class = "navbar-item"><router-link to = "/store">Store</router-link></a>
                 <a class = "navbar-item"><router-link to = "/instagram">Instagram</router-link></a>
@@ -21,7 +22,9 @@ export default {
 
 
 <style lang="scss" scoped>
-//Making the nav bar centered (THIS TOOK TOO LONG)
+//Styling for the navbar
+
+//Making the nav bar centered 
 .navbar .navbar-start {
   text-align: center;
   display: block;

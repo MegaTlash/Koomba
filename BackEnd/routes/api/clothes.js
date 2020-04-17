@@ -5,7 +5,7 @@ const router = express.Router();
 
 
 
-//Get Posts
+//getting the posts
 router.get('/', async (req, res) => {
     const posts = await loadPostCollection();
     res.send(await posts.find({}).toArray());
@@ -13,7 +13,7 @@ router.get('/', async (req, res) => {
 })
 
 
-//loadPostsCollection
+//Reading the backend from clound db
 async function loadPostCollection(){
 
     const client = await mongodb.MongoClient.connect('mongodb+srv://Admin:MW9scrg59teSRm9M@koombacluster-rglom.mongodb.net/test?retryWrites=true&w=majority', {

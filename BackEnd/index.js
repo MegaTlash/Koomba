@@ -25,6 +25,7 @@ io.on('connection', function(socket) {
     console.log('User connected');
 });
 
+//Going to Clothes and authentication for backend
 const clothes = require('./routes/api/clothes.js')
 const authentication = require('./routes/api/authentication.js')
 

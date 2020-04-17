@@ -28,7 +28,7 @@
                     }
                 }) 
             },
-            redirectShoppingCart() {
+            redirectShoppingCart() { //this method redirects to the shopping cart
                 this.$router.push({name: `ShoppingCart`}).catch(e => {
                     if (e.name != "NavigationDuplicated") {
                         throw e;

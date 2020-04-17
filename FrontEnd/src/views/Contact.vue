@@ -35,6 +35,7 @@ export default {
 </script>
 
 <style scoped>
+/*Styling the Contact Section */
 
 h1 {
     font-size:3rem;

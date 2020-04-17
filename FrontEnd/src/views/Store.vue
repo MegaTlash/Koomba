@@ -50,6 +50,7 @@ export default {
         })
       }
     },
+    //Getting the data from the backend
     created: function(){
       axios.get('http://localhost:3000/api/clothes')
       .then((response) => this.items = response.data)

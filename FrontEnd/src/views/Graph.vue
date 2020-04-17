@@ -16,6 +16,7 @@ export default {
     name: "Graph",
    data() {
     return {
+        //Data for the graph
       workDone: [
         {name: "Sweaters", sold: 60.0},
         {name: "Beanies", sold: 25.0},
@@ -30,7 +31,8 @@ export default {
     this.generateGraph();
   },
    methods: {
-       
+    
+    //Method to generate the graph to the method
     generateGraph() {
         const margin = 50;
         const width = 800;
@@ -38,7 +40,7 @@ export default {
         const chartWidth = width - 2 * margin;
         const chartHeight = height - 2 * margin;
 
-
+        //The colour and the domain of the scale
         const colourScale = d3.scaleLinear()
                           .domain([10, 60])
                           .range(['green', 'purple']);
