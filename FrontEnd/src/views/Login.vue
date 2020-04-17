@@ -4,6 +4,7 @@
             href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" 
             integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" 
             crossorigin="anonymous">
+
         <h1>LOGIN</h1>
          <div class="form">
 
@@ -36,6 +37,7 @@
             </div>
         </div>
 
+        <!-- Login Button-->
         <button @click="login" class="button is-success">Sign In</button>
     </div>
 </template>
@@ -47,33 +49,45 @@ export default {
     name: 'Login',
     data(){
         return{
+
+            // Initialize inputs to empty strings
             email: '',
             password: '',
 
+            // Used to change p class
             pClass1: '',
             pClass2: '',
 
+            // Used to change input class
             inputType1: 'input is-dark',
             inputType2: 'input is-dark',
             
+            // Used to store error messages if any occur
             errMsg1: '',
             errMsg2: '',
 
+            // Used to change icon
             icon1: '',
             icon2: '',
         }
     },
     methods: {
+
+        // Method to allow user to login
+        // Executed when "Login" button is pressed or when the enter key is pressed
         login(){
+
+            // Storing user input in a user model
             let user = {
                 email: this.email,
                 password: this.password
             }
-        
+
+            // Sending user input to backend to check for any errors
             axios.post('http://localhost:3000/login', user).then(res => {
                 if (res.data.title == 'errors'){
                     
-                    //Email error check
+                    // Email error check
                     if(res.data.emailNotExists || res.data.emailEmpty){
                         this.inputType1 = 'input is-danger'
                         this.pClass1 = 'help is-danger';
@@ -87,7 +101,7 @@ export default {
                         this.icon1 = 'fas fa-check';
                     }
                     
-                    //Password error check
+                    // Password error check
                     if(res.data.passNoMatch || res.data.passEmpty){
                         this.inputType2 = 'input is-danger';
                         this.pClass2 = 'help is-danger';
@@ -102,7 +116,7 @@ export default {
                     }
                 }
 
-                //Login Successful
+                // Login Successful
                 else {
                     // Take away login option and replace it with login
                     document.getElementById('initial').style.display = "none";
