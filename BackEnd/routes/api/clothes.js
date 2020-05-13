@@ -15,11 +15,12 @@ router.get('/', async (req, res) => {
 
 //Reading the backend from clound db
 async function loadPostCollection(){
-
-    const client = await mongodb.MongoClient.connect('mongodb+srv://Admin:MW9scrg59teSRm9M@koombacluster-rglom.mongodb.net/test?retryWrites=true&w=majority', {
+    
+    /* Look at Mongodb cloud documentation to check how to connect your own database(ADD in your url username and password into the quoatations
+    const client = await mongodb.MongoClient.connect('', {
        useNewUrlParser: true 
     });
-
+    */
     return client.db('KoombaDataBase').collection('ShopItems');
 }
 
